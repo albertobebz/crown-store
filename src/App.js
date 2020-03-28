@@ -25,6 +25,8 @@ class App extends Component {
     // when componentDidMount is called, `auth.onAuthStateChanged`
     // is executed and the returned value is firebase.Unsubscribe
     // which is assigned to `this.unsubscribeFromAuth`
+
+    // 'onAuthStateChanged' is an open connection and gets fired everytime user login/logout
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
